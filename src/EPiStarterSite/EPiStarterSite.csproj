@@ -276,12 +276,15 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
+    <Compile Include="Features\Shared\Models\LayoutModel.cs" />
+    <Compile Include="Features\Shared\Models\SiteWebViewPage.cs" />
     <Compile Include="Features\Start\Controllers\StartPageController.cs" />
     <Compile Include="Features\Start\Models\StartPage.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Identity\SiteDbContext.cs" />
+    <Compile Include="Infrastructure\Initialization\DependencyResolverInitializationcs.cs" />
     <Compile Include="Infrastructure\Initialization\SiteInitialization.cs" />
     <Compile Include="Infrastructure\Identity\SiteUser.cs" />
     <Compile Include="Infrastructure\Owin\Startup.cs" />
@@ -295,7 +298,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
-    <Folder Include="Features\Shared\" />
     <Folder Include="Static\" />
   </ItemGroup>
   <ItemGroup>
@@ -313,6 +315,7 @@
     <Content Include="modules\_protected\CMS\CMS.zip" />
     <Content Include="Features\Start\Views\Index.cshtml" />
     <Content Include="Features\_ViewStart.cshtml" />
+    <Content Include="Features\Shared\Layouts\_SiteLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
