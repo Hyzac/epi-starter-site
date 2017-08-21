@@ -1,10 +1,10 @@
 ﻿using System.Web.Mvc;
-using EPiServer.Web.Mvc;
+using EPiStarterSite.Features.Shared.Controllers;
 using EPiStarterSite.Features.Start.Models;
 
 namespace EPiStarterSite.Features.Start.Controllers
 {
-    public class StartPageController : PageController<StartPage>
+    public class StartPageController : PageControllerBase<StartPage>
     {
         public ActionResult Index(StartPage currentPage)
         {

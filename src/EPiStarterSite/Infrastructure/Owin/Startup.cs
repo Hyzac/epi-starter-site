@@ -23,7 +23,7 @@ namespace EPiStarterSite.Infrastructure.Owin
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Util/Login.aspx"),
+                LoginPath = new PathString(Global.LoginPath),
                 Provider = new CookieAuthenticationProvider
                 {
                     OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager<SiteUser>, SiteUser>(
