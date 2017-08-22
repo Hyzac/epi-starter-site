@@ -277,6 +277,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="Features\Shared\Controllers\PageControllerBase.cs" />
+    <Compile Include="Features\Shared\Models\ContentRenderingErrorModel.cs" />
     <Compile Include="Features\Shared\Models\LayoutModel.cs" />
     <Compile Include="Features\Shared\Models\SiteContentType.cs" />
     <Compile Include="Features\Shared\Models\SiteImageUrl.cs" />
@@ -288,11 +289,17 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Infrastructure\Channels\DisplayResolutionBase.cs" />
+    <Compile Include="Infrastructure\Channels\DisplayResolutions.cs" />
+    <Compile Include="Infrastructure\Channels\MobileChannel.cs" />
+    <Compile Include="Infrastructure\Channels\WebChannel.cs" />
     <Compile Include="Infrastructure\Identity\SiteDbContext.cs" />
     <Compile Include="Infrastructure\Initialization\DependencyResolverInitializationcs.cs" />
+    <Compile Include="Infrastructure\Initialization\DisplayModesInitialization.cs" />
     <Compile Include="Infrastructure\Initialization\SiteInitialization.cs" />
     <Compile Include="Infrastructure\Identity\SiteUser.cs" />
     <Compile Include="Infrastructure\Owin\Startup.cs" />
+    <Compile Include="Infrastructure\Rendering\ErrorHandlingContentRenderer.cs" />
     <Compile Include="Infrastructure\ViewEngines\SiteViewEngine.cs" />
     <Compile Include="Migrations\201708112127276_UserTables.cs" />
     <Compile Include="Migrations\201708112127276_UserTables.Designer.cs">
@@ -301,14 +308,13 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Features\Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Resources\LanguageFiles\Display.xml" />
     <Content Include="Static\gfx\page-template.png" />
     <Content Include="Web.config" />
     <Content Include="App_Data\GeoLiteCity.dat" />
@@ -323,6 +329,7 @@
     <Content Include="Features\Start\Views\Index.cshtml" />
     <Content Include="Features\_ViewStart.cshtml" />
     <Content Include="Features\Shared\Layouts\_SiteLayout.cshtml" />
+    <Content Include="Features\Shared\Views\TemplateError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
