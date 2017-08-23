@@ -276,6 +276,8 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
+    <Compile Include="Features\Settings\Models\SettingsPage.cs" />
+    <Compile Include="Features\Settings\SiteSettings.cs" />
     <Compile Include="Features\Shared\Controllers\PageControllerBase.cs" />
     <Compile Include="Features\Shared\Models\ContentRenderingErrorModel.cs" />
     <Compile Include="Features\Shared\Models\LayoutModel.cs" />
@@ -289,6 +291,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Infrastructure\Attributes\SingletonAttribute.cs" />
     <Compile Include="Infrastructure\Channels\DisplayResolutionBase.cs" />
     <Compile Include="Infrastructure\Channels\DisplayResolutions.cs" />
     <Compile Include="Infrastructure\Channels\MobileChannel.cs" />
@@ -296,6 +299,7 @@
     <Compile Include="Infrastructure\Identity\SiteDbContext.cs" />
     <Compile Include="Infrastructure\Initialization\DependencyResolverInitializationcs.cs" />
     <Compile Include="Infrastructure\Initialization\DisplayModesInitialization.cs" />
+    <Compile Include="Infrastructure\Initialization\SingletonTypeInitializationModule.cs" />
     <Compile Include="Infrastructure\Initialization\SiteInitialization.cs" />
     <Compile Include="Infrastructure\Identity\SiteUser.cs" />
     <Compile Include="Infrastructure\Owin\Startup.cs" />
