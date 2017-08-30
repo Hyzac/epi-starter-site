@@ -276,6 +276,7 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
+    <Compile Include="Features\Media\Models\GenericMedia.cs" />
     <Compile Include="Features\Settings\Models\SettingsPage.cs" />
     <Compile Include="Features\Settings\SiteSettings.cs" />
     <Compile Include="Features\Shared\Controllers\PageControllerBase.cs" />
