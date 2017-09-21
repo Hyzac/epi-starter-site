@@ -1,0 +1,26 @@
+﻿@using EPiServer.Framework.Web.Mvc.Html
+
+<!DOCTYPE html>
+
+<html lang="@CurrentPage.Language">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@CurrentPage.MetaTitle</title>
+    @Html.CanonicalLink()
+    @Html.AlternateLinks()
+
+    @Html.RequiredClientResources("Header")
+</head>
+<body>
+    @Html.RenderEPiServerQuickNavigator()
+    @Html.FullRefreshPropertiesMetaData()
+    <div>
+        @RenderBody()
+    </div>
+    @Html.RequiredClientResources("Footer")
+
+    <script src="https://unpkg.com/vue"></script>
+</body>
+</html>
